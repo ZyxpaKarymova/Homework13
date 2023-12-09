@@ -12,7 +12,6 @@ public class Person {
         this.middleName = middleName;
         this.surname = surname;
     }
-
     public void setName(String name) {
         this.name = name;
     }

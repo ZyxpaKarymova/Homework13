@@ -1,7 +1,7 @@
 package sky.pro;
 
 public class Employee {
-    public static int ID;
+    public static int identity;
     private Person person;
     private String department;
     private int salary;
@@ -11,8 +11,8 @@ public class Employee {
         this.person = person;
         this.department = department;
         this.salary = salary;
-        this.id = ID;
-        ID++;
+        this.id = identity;
+        identity++;
     }
 
     public void setPerson(Person person) {
