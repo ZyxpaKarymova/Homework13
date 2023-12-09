@@ -16,13 +16,13 @@ public class Main {
         company[0] = new Employee(new Person("Ivan", "Ivanovich", "Ivanov"), "1", 20000);
         company[1] = new Employee(new Person("Petr", "Petrovich", "Petrov"), "2", 20010);
         company[2] = new Employee(new Person("Foma", "Bornovich", "Kinayev"), "3", 20000);
-        company[3] = new Employee(new Person("roman", "Ivanovich", "Ivanov"), "1", 20000);
-        company[4] = new Employee(new Person("john", "Petrovich", "Petrov"), "2", 20000);
-        company[5] = new Employee(new Person("tom", "Bornovich", "Kinayev"), "3", 20000);
-        company[6] = new Employee(new Person("oleg", "Ivanovich", "Ivanov"), "1", 20000);
-        company[7] = new Employee(new Person("maxim", "Petrovich", "Petrov"), "2", 20000);
-        company[8] = new Employee(new Person("Foma", "Bornovich", "Kinayev"), "3", 20000);
-        company[9] = new Employee(new Person("Foma", "Bornovich", "Kinayev"), "3", 19990);
+        company[3] = new Employee(new Person("Roman", "Ivanovich", "Ivanov"), "1", 20000);
+        company[4] = new Employee(new Person("John", "Petrovich", "Petrov"), "2", 20000);
+        company[5] = new Employee(new Person("Tom", "Borisovich", "Kinyazev"), "3", 20000);
+        company[6] = new Employee(new Person("Oleg", "Ivanovich", "Tinkoff"), "1", 20000);
+        company[7] = new Employee(new Person("Maxim", "Petrovich", "Petrov"), "2", 20000);
+        company[8] = new Employee(new Person("Gerasim", "Fyodorovich", "Mumuov"), "3", 20000);
+        company[9] = new Employee(new Person("Emmanuel", "Sidorovich", "Kant"), "3", 19990);
 
     }
 
