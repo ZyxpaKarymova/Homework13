@@ -10,7 +10,6 @@ public class Main {
         System.out.println("Минимальная зарплата у работника " + findMinSalaryEmployee());
         System.out.println("Максимальная зарплата у работника " + findMaxSalaryEmployee());
         System.out.println("Средняя зарплата составляет  " + findAverageSalary());
-
     }
 
     static void myMethod() {
