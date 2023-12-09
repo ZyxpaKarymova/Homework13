@@ -1,43 +1,72 @@
 package sky.pro;
 
 public class Main {
-    public static void main(String[] args){
+    static Employee[] company = new Employee[10];
 
+    public static void main(String[] args) {
+        myMethod();
+        printAllEmployees();
+        System.out.println("Все зарплаты составляют " + calculateAllSalaries());
+        System.out.println("Минимальная зарплата у работника " + findMinSalaryEmployee());
+        System.out.println("Максимальная зарплата у работника " + findMaxSalaryEmployee());
+        System.out.println("Средняя зарплата составляет  " + findAverageSalary());
 
     }
-}/*
-### Курсовое задание. Книга сотрудников
 
-*Описание задачи:*
+    static void myMethod() {
+        company[0] = new Employee(new Person("Ivan", "Ivanovich", "Ivanov"), "1", 20000);
+        company[1] = new Employee(new Person("Petr", "Petrovich", "Petrov"), "2", 20010);
+        company[2] = new Employee(new Person("Foma", "Bornovich", "Kinayev"), "3", 20000);
+        company[3] = new Employee(new Person("roman", "Ivanovich", "Ivanov"), "1", 20000);
+        company[4] = new Employee(new Person("john", "Petrovich", "Petrov"), "2", 20000);
+        company[5] = new Employee(new Person("tom", "Bornovich", "Kinayev"), "3", 20000);
+        company[6] = new Employee(new Person("oleg", "Ivanovich", "Ivanov"), "1", 20000);
+        company[7] = new Employee(new Person("maxim", "Petrovich", "Petrov"), "2", 20000);
+        company[8] = new Employee(new Person("Foma", "Bornovich", "Kinayev"), "3", 20000);
+        company[9] = new Employee(new Person("Foma", "Bornovich", "Kinayev"), "3", 19990);
 
-Напишите программу, которая занимается учетом сотрудников и помогает кадрам и бухгалтерии
-автоматизировать процессы.
+    }
 
-С помощью вашей программы бухгалтерия и отдел кадров смогут узнавать следующую информацию:
+    public static void printAllEmployees() {
+        for (int i = 0; i < company.length; i++) {
+            Employee employee = company[i];
+                        System.out.println(company[i]);
+        }
+    }
 
-1. Получить список всех сотрудников.
-2. Посчитать сумму затрат на зарплаты.
-3. Найти сотрудника с минимальной заплатой.
-4. Найти сотрудника с максимальной зарплатой.
-5. Подсчитать среднее значение зарплат.
+    public static int calculateAllSalaries() {
+        int sum = 0;
+        for (int i = 0; i < company.length; i++) {
+            sum = sum + company[i].getSalary();
+        }
+        return sum;
+    }
 
-Далее описаны пункты, которые нужно реализовать, чтобы сделать задание.
-Обратите внимание, что у задания три уровня сложности в зависимости от
-проработки вашей программы: необходимо сделать базовые пункты, задачи с
-повышенной сложностью и очень сложные — по желанию.
-- **Базовая сложность**
-    1. Создать класс Employee, который содержит информацию о Ф.И.О., отделе и зарплате сотрудника. Отделы для простоты должны быть названы от 1 до 5.
-    2. Добавить статическую переменную-счетчик, которая будет отвечать за id.
-    3. Добавить в класс Employee поле id, которое проставляется из счетчика, а затем счетчик увеличивает свое значение.
-    4. Добавить возможность получать значения полей из Employee (геттеры) для всех полей.
-    5. Добавить возможность устанавливать значения полей отдела и зарплаты (сеттеры).
-    6. По умолчанию все поля должны передавать через конструктор (кроме id) изаполняться в нем (включая id, который нужно получить из счетчика).
-    7. Создать внутри класса с методом main поле типа Employee[10], которое будет выполнять роль «хранилища» для записей о сотрудниках.
-    8. Создать статические методы, которые будут взаимодействовать с массивом и gредоставлять результат:
-        1. Получить список всех сотрудников со всеми имеющимися по ним данными (вывести в консоль значения всех полей (toString)).
-        2. Посчитать сумму затрат на зарплаты в месяц.
-        3. Найти сотрудника с минимальной зарплатой.
-        4. Найти сотрудника с максимальной зарплатой.
-        5. Подсчитать среднее значение зарплат (можно использовать для этого метод из пункта b).
-        6. Получить Ф. И. О. всех сотрудников (вывести в консоль).
- */
+    public static Employee findMinSalaryEmployee() {
+        int min = Integer.MAX_VALUE;
+        Employee poorest = null;
+        for (int i = 0; i < company.length; i++) {
+            if (company[i].getSalary() < min) {
+                min = company[i].getSalary();
+                poorest = company[i];
+            }
+        }
+        return poorest;
+    }
+
+    public static Employee findMaxSalaryEmployee() {
+        int max = Integer.MIN_VALUE;
+        Employee richest = null;
+        for (int i = 0; i < company.length; i++) {
+            if (company[i].getSalary() > max) {
+                max = company[i].getSalary();
+                richest = company[i];
+            }
+        }
+        return richest;
+    }
+
+    public static int findAverageSalary() {
+        return calculateAllSalaries() / company.length;
+    }
+}
